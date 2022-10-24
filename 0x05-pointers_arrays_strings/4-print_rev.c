@@ -9,15 +9,9 @@ void print_rev(char *s)
 {
 	int count;
 
-	while(s[count] != '\0')
-	{
-		count++;
-	}
-	while(s[count] >= '\0')
-	{
-		_putchar(s[count]);
-		count--;
-	}
+	for (index = 0; s[count] != '\0'; ++count);
+	for (--count; count >= 0; --count)
+		_putchar(s[count])
 	_putchar('\n');
 }	
 
