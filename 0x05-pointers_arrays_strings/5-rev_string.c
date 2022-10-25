@@ -18,5 +18,6 @@ void rev_string(char *s)
 		letter = s[d];
 		s[d] = s[index - 1 - d];
 		s[index - 1 - d] = letter;
+	}
 }
 
