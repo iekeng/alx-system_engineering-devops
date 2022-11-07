@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 /**
   *main - entry point
@@ -11,7 +12,7 @@ int main(int argc, char __attribute__((unused)) *argv[])
 
 	for (i = 0; i < argc; i++)
 		continue;
-	printf("%d \n", i);
+	printf("%d\n", i);
 
 	return (0);
 }
