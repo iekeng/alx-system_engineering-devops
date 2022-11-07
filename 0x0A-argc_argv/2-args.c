@@ -1,10 +1,15 @@
+#include <stdlib.h>
 #include <stdio.h>
+
 /**
-  *main - entry point
-  *@argc: argument counter
-  *@argv: argument vector
-  *Return: 0
+  *main - a program that prints all arguments it recieves
+  *
+  *@argc: holds number of arguments passed
+  *@argv: holds the arguments passed
+  *
+  *Return: always 0 (success)
   */
+
 int main(int argc, char *argv[])
 {
 	int i;
