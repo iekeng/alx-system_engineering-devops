@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 /**
-  *main - add arguments
+  *main - adds positive numbers
   *
   *@argc: argument counter
   *@argv: argument vector
@@ -16,21 +16,47 @@ int main(int argc, char *argv[])
 {
 	int res, i;
 
-	for (i = 1; i < argc; i++)
+	if (argc == 1)
 	{
-		if (!isdigit(atoi(argv[i])))
-		{
-			printf("Error\n");
-			return (1);
-		}
-		else if (!argv[i])
-			printf("0\n");
-		else
-		{
-			res = res + atoi(argv[i]);
-			printf("%d\n", res);
-			return (0);
-		}
+		printf("0 \n");
 	}
+	else
+	{
+		res = 0;
+		for (i = 0; i < argc; i++)
+		{
+			if (isNum(argv[i] == 0)
+			{
+				res += atoi(argv[i]);
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		printf("%d\n", res);
+	}
+	return (0);
+}
+
+/**
+  *isNum - checks if the value passed from main is a number
+  *
+  *@num: input param
+  *
+  *Return: 1 if @num is not a number or 0 if it is
+  */
+
+int isNum(char num[])
+{
+	int i, len = strlen(num);
+
+	for (i = 0; i < len; i++)
+	{
+		if (!isdigit(num[i]))
+			return (1);
+	}
+	return (0);
 }
 
