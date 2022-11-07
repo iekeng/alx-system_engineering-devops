@@ -10,7 +10,7 @@
  *         1 if it's not a number
 */
 
-int isNum(char num[]))
+int isNum(char num[])
 {
 	int i, l = strlen(num);
 
