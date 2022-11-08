@@ -1,15 +1,21 @@
 #include "main.h"
+
 /**
-  *_puts - prints string to stdout
-  *@str: parameter passed to function
+  *_puts - prints a string, followed by a new line
+  *
+  *@str; string input
+  *
   *Return: nothing
+  *
   */
+
 void _puts(char *str)
 {
+
 	while (*str != '\0')
 	{
 		_putchar(*str + 0);
-		++str;
+		str++;
 	}
 	_putchar('\n');
 }

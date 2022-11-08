@@ -1,10 +1,12 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
-  *swap_int - swap the values @a and @b
-  *@a: first parameter
-  *@b: second parameter
-  *Return: nothing
+  *swap_int - swaps the values of two integers
+  *@a: first input param
+  *@b: second input param
+  *Return: Nothing
   */
+
 void swap_int(int *a, int *b)
 {
 	int temp;
