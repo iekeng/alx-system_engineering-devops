@@ -4,16 +4,13 @@
 /**
   *main - prints program name
   *
-  *@argc: argument counter
-  *@argv: argument vector
-  *
   *Return: 0
   **/
 
-int main(int __attribute__((unused)) argc, char *argv[])
+int main(void)
 {
-	printf("%s\n", argv[6]);
+	printf("%s\n", __FILE__);
 
-	return(0);
+	return (0);
 }
 
