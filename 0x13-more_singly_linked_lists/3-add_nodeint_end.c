@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
   *add_nodeint_end - adds a nnode to the end of listint_int
