@@ -1,6 +1,14 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+/**
+  *struct listint_s - node declaration
+  *
+  *@n: data
+  *@next: address of the next node
+  *
+  *Description: singly linked list node structure
+  */
 typedef struct listint_s
 {
 	int n;
@@ -21,3 +29,4 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 
 #endif
+
