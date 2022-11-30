@@ -12,27 +12,24 @@
 size_t print_list(const list_t *h)
 {
 	int count = 0;
-	
-	//if head is null no node exists
+
+	/*if head is null no node exists*/
 	if (h == NULL)
 		return (0);
 
-	list_t *ptr == NULL;
-	ptr = h;
-
-	while (ptr->next != NULL)
+	while (h->next != NULL)
 	{
 		count++;
 
-		if (ptr->str == NULL)
-			printf("[%d] (%s)\n", 0, 'nil');
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, (nil));
 		else
-			printf("[%d] (%s)\n", ptr->len, ptr->str);
+			printf("[%d] (%s)\n", h->len, h->str);
 
-		ptr = ptr->next;
+		h = h->next;
 	}
-	//print for last node
-	printf("[%d] (%s)", ptr->len, ptr->str);
+	/*print for last node*/
+	printf("[%d] (%s)\n", h->len, h->str);
 
 	return (count);
 }
