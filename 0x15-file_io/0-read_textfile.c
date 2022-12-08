@@ -14,37 +14,24 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buff;
-	ssize_t check, count;
-	int fd;
+	int file, letCount;
 
 	if (filename == NULL)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
-
-	if (fd == -1)
-		return (0);
-
-	buff = malloc(sizeof(char) * letters);
+	buff = malloc((letters + 1) * sizeof(char));
 	if (buff == NULL)
-	{
-		free(buff);
-		return (0);
-	}
-	check = read(fd, buff, letters);
-	if (check == -1)
 		return (0);
 
-	count = write(STDOUT_FILENO, buff, check);
-
-	if (count == -1 || check != count)
+	buff[letters] = '\0';
+	file = open(filename, O_RDONLY);
+	if (file == -1)
 		return (0);
 
-	free(buffer);
-
+	letCount = read(file, buff, letters);
+	write(STDOUT_FILENO, buff, letCount);
 	close(file);
-
-	return (count);
-
+	free(buff);
+	return (letCount);
 }
 
