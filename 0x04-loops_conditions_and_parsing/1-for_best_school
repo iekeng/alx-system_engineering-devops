@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#script displays 'Best School' ten times
+i='Best School'
+for (( n=1; n<=10; n++ ))
+do
+  echo "$i"
+done
