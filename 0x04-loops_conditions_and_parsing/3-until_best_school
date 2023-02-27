@@ -1,8 +1,8 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #prints 'Best School' ten times
 
-n=0
-until [ $n -eq 10 ]
+n=1
+until [ $n -gt 10 ]
 do
   echo "Best School"
   (( n++ ))
