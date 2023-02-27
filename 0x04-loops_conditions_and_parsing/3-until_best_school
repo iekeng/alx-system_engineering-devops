@@ -1,0 +1,9 @@
+#!/bin/env bash
+#prints 'Best School' ten times
+
+n=1
+until [ $n -gt 10 ]
+do
+  echo "Best School"
+  (( n++ ))
+done
