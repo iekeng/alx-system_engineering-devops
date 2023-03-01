@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+#Prints 'Fizz', 'Buzz' and 'FizzBuzz' for multiples of 3, 5 and both numbers#respectively
 
 for n in {1..100}
 do
