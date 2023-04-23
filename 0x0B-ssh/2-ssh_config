@@ -1,0 +1,6 @@
+# ssh_config file
+Host magic-server
+  HostName 100.25.157.4
+  PasswordAuthentication no
+  User ubuntu
+  IdentityFile ~.ssh/school
