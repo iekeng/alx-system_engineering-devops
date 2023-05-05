@@ -2,6 +2,7 @@
 # Install and configure nginx on the server
 
 sudo apt-get upgrade -y
+sudo apt-get update -y
 sudo apt-get install nginx -y
 sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 var/www
