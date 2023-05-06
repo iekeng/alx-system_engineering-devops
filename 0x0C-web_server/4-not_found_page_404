@@ -8,10 +8,10 @@ chown -R "$USER:$USER" /var/www/html
 chmod -R 755 /var/www
 echo "Hello world" > /var/www/html/index.nginx-debian.html
 new_line="\\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
-sed -i "15i $new_line" /etc/nginx/sites-available/default
+sed -i "54a $new_line" /etc/nginx/sites-available/default
 
 touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 newer_line="\\\\terror_page 404 /404.html;\n\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\t}"
-sed -i "19i $newer_line" /etc/nginx/sites-available/default
+sed -i "57a $newer_line" /etc/nginx/sites-available/default
 sudo service nginx restart
