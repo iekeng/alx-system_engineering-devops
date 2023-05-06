@@ -11,7 +11,8 @@ new_line="\\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/w
 sed -i "15i $new_line" /etc/nginx/sites-available/default
 
 touch /var/www/html/404.html
-echo "Ceci n'est pas une page" > /var/www/default/404.html
+text="Ceci ne'est pas une page\n"
+sed -i "1i $text" > /var/www/default/404.html
 newer_line="\\\\terror_page 404 /404.html;\n\n\tlocation /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
 sed -i "19i $newer_line" /etc/nginx/sites-available/default
 sudo service nginx restart
