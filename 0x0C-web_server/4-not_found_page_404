@@ -10,12 +10,10 @@ echo "Hello world" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 new_line="\\\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
-sed -i "54a $new_line" /etc/nginx/sites-available/default
+sed -i "15a $new_line" /etc/nginx/sites-available/default
 
-mkdir -p /var/www/default
+touch /var/www/html/404.html
 echo "Ceci n'est pas une page" > /var/www/default/404.html
-line1="\\\\tlocation = /404.html {\n\t\t root /var/www/default;\n\t}"
-sed -i "29i $line1" /etc/nginx/sites-available/default
-line2="\\\terror_page 404 /404.html;"
-sed -i "32i $line2" /etc/nginx/sites-available/default
-service nginx restart
+newer_line="\\\\terror_page 404 /404.html;\n\n\tlocation /404.html {\n\t\t root;\n\t\t internal;\n\t}"
+sed -i "19i $newer_line" /etc/nginx/sites-available/default
+sudo service nginx restart
