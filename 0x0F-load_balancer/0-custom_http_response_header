@@ -17,9 +17,6 @@ sed -i "57a $newer_line" /etc/nginx/sites-available/default
 
 host=$(hostname)
 line1="\\\\tadd_header X-Served-By \"$host\";"
-sed -i "/location \/ {\\
-$line1
-}/" /etc/nginx/sites-available/default
-
+sed -i "46i $line1" /etc/nginx/sites-available/default
 
 sudo service restart nginx
