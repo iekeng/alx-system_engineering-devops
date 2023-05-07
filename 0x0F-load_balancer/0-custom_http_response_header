@@ -15,8 +15,7 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 newer_line="\\\\terror_page 404 /404.html;\n\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\t}"
 sed -i "57a $newer_line" /etc/nginx/sites-available/default
 
-host=$(hostname)
-line1="\\\\tadd_header X-Served-By \"$host\";"
+line1="\\\tadd_header X-Served-By \$hostname;"
 sed -i "46i $line1" /etc/nginx/sites-available/default
 
-sudo service restart nginx
+sudo service nginx restart
