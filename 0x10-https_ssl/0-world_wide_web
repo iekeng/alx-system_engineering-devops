@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Display information for a particular subdomain
+
+display ()
+{
+    domain="$1"
+    sub="$2"
+    dig "$sub.$domain | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}'
+    var = "$sub"
+}
+
+for sub in "www" "lb-01" "web-01" "web-02"
+do 
+    if
+	[-z $2] || ["$2" == "$sub"]
+	then
+	    display "$1" "$sub"
+    fi
+done
