@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
-#Display information for a particular subdomain
+# displays information about subdomains
 
-display ()
-{
-    domain="$1"
-    sub="$2"
-    dig "$sub.$domain | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}'
-    var="$sub"
+dig_domain() {
+	FULL_DOMAIN=$2.$1
+	SUB_DOMAIN=$2
+	RECORD=$(dig "$FULL_DOMAIN" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $4}')
+        HOST=$(dig "$2"."$1" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $5}')
+        echo "The subdomain $SUB_DOMAIN is a $RECORD record and points to $HOST"
 }
 
-for sub in "www" "lb-01" "web-01" "web-02"
-do 
-    if
-	[-z $2] || ["$2" == "$sub"]
-	then
-	    display "$1" "$sub"
+domain=$1
+subdomain=$2
+sub=( www lb-01 web-01 web-02 )
+
+validate () {
+    if [[ -z "$subdomain" ]]
+    then
+        for x in "${sub[@]}"
+        do
+            dig_domain "$domain" "$x"
+        done
+    else
+        dig_domain "$domain" "$subdomain"
     fi
-done
+}
+
+validate
