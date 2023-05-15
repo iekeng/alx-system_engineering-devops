@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 # Configure UFW to forward requests from port 8080 to port 80 locally
 
-conf='\*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT'
 sudo ufw allow port 8080
-sef -d 's/\(*filter\)/$conf/g' /etc/ufw/before.rules
+sed -i 's/\(*filter\)/\*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT\n\1/g' /etc/ufw/before.rules
 sudo systemctl restart ufw
