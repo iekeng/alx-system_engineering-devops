@@ -1,0 +1,11 @@
+#!/bin/bash 
+# Install and configure ufw to listen on ports
+# 22, 443 and 80 only
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
