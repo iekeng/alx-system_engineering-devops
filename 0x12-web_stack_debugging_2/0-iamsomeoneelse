@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # execute the whoami command as another user
 
 if [[ "$1" ]]
