@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+# execute the whoami command as another user
+
+if [[ "$1" ]]
+then
+	sudo -u "$1" whoami	
+fi
