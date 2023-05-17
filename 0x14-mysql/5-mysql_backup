@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 # create sqldump and compress
 
 mysqldump -u root -p "$1" --all-databases --master-data > backup.sql
