@@ -3,6 +3,8 @@
 
 if [[ $1 ]]
 then
-	mysqldump -u root -p "$1" --all-databases --master-data > backup.sql
-	tar -czvf $(date +'%d-%m-%Y').tar.gz backup.sql
+	date=$(date +%d-%m-%Y)
+	password=$1
+	mysqldump -u root -p"$password" --all-databases > backup.sql
+	gzip -c backup.sql > "$date".tar.gz
 fi
