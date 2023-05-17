@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # create sqldump and compress
 
-if [[ $1 ]]
-then
-	date=$(date +%d-%m-%Y)
-	password=$1
-	mysqldump -u root -p"$password" --all-databases > backup.sql
-	gzip -c backup.sql > "$date".tar.gz
-fi
+mysqldump --all-databases -u root --password="$1" > backup.sql
+day=$(date +"%d")
+month=$(date +"%m")
+year=$(date +"%Y")
+file_name="$day-$month-$year.tar.gz"
+tar -czvf "$file_name" backup.sql
