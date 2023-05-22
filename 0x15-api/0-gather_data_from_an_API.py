@@ -1,9 +1,7 @@
 #!/usr/bin/python3
+"""Retrieves employee data"""
 import requests
 import sys
-"""Retrieve employee data from API
-   With employee ID passed as parameter
-"""
 
 
 if __name__ == '__main__':
