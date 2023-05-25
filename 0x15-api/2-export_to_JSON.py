@@ -18,11 +18,12 @@ if __name__ == '__main__':
     tasks = response.json()
 
     for task in tasks:
-        taskDic = {'task': task['title'], 'completed': task['completed'], 'username': userName }
+        taskDic = {'task': task['title'],
+                   'completed': task['completed'],
+                   'username': userName}
         data.append(taskDic)
 
-    jsonData = {employeeId : data}
+    jsonData = {employeeId: data}
 
     with open('{}.json'.format(employeeId), 'w') as f:
         json.dump(jsonData, f)
-            
