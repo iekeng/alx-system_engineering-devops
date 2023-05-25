@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """export data to JSON"""
+import json
 import requests
 import sys
-import json
 
 if __name__ == '__main__':
     baseUrl = 'https://jsonplaceholder.typicode.com/users'
