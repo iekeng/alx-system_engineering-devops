@@ -24,5 +24,5 @@ if __name__ == '__main__':
                     'completed': task['completed']}
                 userId = task['userId']
                 props.append(obj)
-                objs[userId] = props
-            json.dump(objs, file)
+            objs[userId] = props
+        json.dump(objs, file)
