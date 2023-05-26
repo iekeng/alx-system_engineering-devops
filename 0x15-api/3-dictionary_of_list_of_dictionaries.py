@@ -19,9 +19,9 @@ if __name__ == '__main__':
             tasks = todo.json()
             for task in tasks:
                 obj = {
+                    'username': username,
                     'task': task['title'],
-                    'completed': task['completed'],
-                    'username': username}
+                    'completed': task['completed']}
                 userId = task['userId']
                 props.append(obj)
                 objs[userId] = props
