@@ -14,5 +14,6 @@ def number_of_subscribers(subreddit):
         response = requests.get(url, headers=header)
         data = response.json()
         num_subs = data['data']['children'][0]['data']['subreddit_subscribers']
+        return num_subs
     except BaseException:
         return num_subs
