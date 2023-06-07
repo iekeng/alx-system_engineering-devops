@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Retrieve title of all hot posts """
+""" Retrieves title of all hot posts 
+    from a subreddit
+"""
 import requests
 
 
