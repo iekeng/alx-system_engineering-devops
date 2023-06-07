@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Retrieves title of all hot posts 
+""" Retrieves title of all hot posts
     from a subreddit
 """
 import requests
@@ -20,6 +20,6 @@ def recurse(subreddit, hot_list=[], fullname=None):
         for titles in data['data']['children']:
             title = titles['data']['title']
             hot_list.append(title)
-        return hot_list
-    except Exception as e:
+        print(hot_list)
+    except BaseException:
         return None
