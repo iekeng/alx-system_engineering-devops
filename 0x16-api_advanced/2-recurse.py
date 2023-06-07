@@ -20,6 +20,6 @@ def recurse(subreddit, hot_list=[], fullname=None):
         for titles in data['data']['children']:
             title = titles['data']['title']
             hot_list.append(title)
-        print(hot_list)
+        return hot_list
     except Exception as e:
-        print(e)
+        return None
