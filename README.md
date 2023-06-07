@@ -1,1 +1,1 @@
-0x00. Shell project - DevOps, Shell, Bash
+0x07-networking_basics
