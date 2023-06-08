@@ -11,8 +11,6 @@ def recurse(subreddit, hot_list=[], fullname=None):
     url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
         subreddit, fullname)
     response = requests.get(url, headers=header)
-    if response.status_code != 200:
-        print(response.status_code)
     data = response.json()
     try:
         if response.status_code == 200:
@@ -21,8 +19,7 @@ def recurse(subreddit, hot_list=[], fullname=None):
             for titles in data['data']['children']:
                 title = titles['data']['title']
                 hot_list.append(title)
-            return (hot_list)
-        else:
-            return (None)
-    except:
+            print(hot_list)
+        return (None)
+    except BaseException:
         return (None)
