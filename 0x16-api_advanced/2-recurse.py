@@ -13,16 +13,15 @@ def recurse(subreddit, hot_list=[], fullname=None):
     response = requests.get(url, headers=header)
     data = response.json()
     fullname = data['data']['after']
-    if fullname is None:
-        return None
-    else:
-        try:
-            if fullname is not None:
-                recurse(subreddit, hot_list, fullname)
-            for titles in data['data']['children']:
-                title = titles['data']['title']
-                hot_list.append(title)
-            return hot_list
-            # print(hot_list)
-        except BaseException:
+    try:
+        if fullname is not None:
+            recurse(subreddit, hot_list, fullname)
+        else:
             return None
+        for titles in data['data']['children']:
+            title = titles['data']['title']
+            hot_list.append(title)
+        return hot_list
+        # print(hot_list)
+    except BaseException:
+        return None
