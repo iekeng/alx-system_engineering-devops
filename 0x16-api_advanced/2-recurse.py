@@ -13,7 +13,6 @@ def recurse(subreddit, hot_list=[], fullname=None):
     response = requests.get(url, headers=header)
     data = response.json()
     fullname = data['data']['after']
-
     try:
         if fullname is not None:
             recurse(subreddit, hot_list, fullname)
