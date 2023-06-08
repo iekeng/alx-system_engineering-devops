@@ -15,7 +15,7 @@ def recurse(subreddit, hot_list=[], fullname=None):
     try:
         if response.status_code == 200:
             fullname = data['data']['after']
-            recurse(subreddit, hot_list, fullname)
+            recurse(subreddit, fullname)
             for titles in data['data']['children']:
                 title = titles['data']['title']
                 hot_list.append(title)
@@ -23,3 +23,4 @@ def recurse(subreddit, hot_list=[], fullname=None):
         return (None)
     except:
         return (None)
+ recurse('python')
