@@ -5,7 +5,7 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], fullname=None):
+def recurse(subreddit, hot_list=['.'], fullname=None):
     """ recursively executes `title` task """
     header = {'User-agent': 'Mozilla/5.0 (X11; Linux x86_64)'}
     url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
@@ -19,8 +19,7 @@ def recurse(subreddit, hot_list=[], fullname=None):
             for titles in data['data']['children']:
                 title = titles['data']['title']
                 hot_list.append(title)
-        else:
-            return (None)
-        return (hot_list)
+        return (None)
     except:
         return (None)
+    
