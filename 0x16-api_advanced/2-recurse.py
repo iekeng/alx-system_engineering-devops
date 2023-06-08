@@ -21,4 +21,4 @@ def recurse(subreddit, hot_list=[], fullname=None):
             hot_list.append(title)
         return (hot_list)
     except BaseException:
-        return (None)
+        return None.
