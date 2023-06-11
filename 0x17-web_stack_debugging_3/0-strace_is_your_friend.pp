@@ -5,7 +5,7 @@ exec { 'replace_line':
 }
 
 service { 'apache2':
-  ensure => 'running',
-  enable => 'true',
+  ensure  => 'running',
+  enable  => 'true',
   restart => 'true',
 }
