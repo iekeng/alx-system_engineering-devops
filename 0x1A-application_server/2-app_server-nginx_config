@@ -1,7 +1,7 @@
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        add_header X-Served-By "$hostname";
+        add_header X-Served-By 181528-web-01;
 	server_name 35.153.19.19;
 
         location = /404.html {
