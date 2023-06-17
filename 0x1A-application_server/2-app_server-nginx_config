@@ -2,7 +2,7 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
         add_header X-Served-By "$hostname";
-	server_name _;
+	server_name 35.153.19.19;
 
         location = /404.html {
                 root /var/www/default;
